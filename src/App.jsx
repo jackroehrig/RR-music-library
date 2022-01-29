@@ -2,6 +2,7 @@ import './App.css';
 import {useEffect, useState} from 'react'
 import SearchBar from './components/SearchBar';
 import Gallery from './components/Gallery';
+import { DataContext } from './context/DataContext';
 
 function App() {
   let [search, setSearch] = useState('')
@@ -52,7 +53,9 @@ function App() {
       <h1>Jack's Music App</h1>
       <SearchBar handleSearch={handleSearch}/>
       {message}
-      <Gallery data={musicData}/>
+      <DataContext.Provider value={musicData} >
+        <Gallery />
+      </DataContext.Provider >
     </div>
   );
 }
