@@ -52,11 +52,11 @@ function App() {
 
   return (
     <div className='app'>
-      <h1>Jack's Music App</h1>
       <Router>
         <Routes>
           <Route exact path='/' element={
             <div>
+              <h1>Jack's Music App</h1>
               <SearchBar handleSearch={handleSearch}/>
               {message}
               <Gallery data={musicData}/>
